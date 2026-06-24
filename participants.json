@@ -1,0 +1,27 @@
+{
+  "age": {
+    "Description": "Age in years at initial study participation."
+  },
+  "sex": {
+    "Description": "Self-reported sex.",
+    "Levels": {
+      "F": "female",
+      "M": "male"
+    }
+  },
+  "group": {
+    "Description": "Participant group.",
+    "Levels": {
+      "amputee": "Upper-limb amputee participant",
+      "control": "Able-bodied control participant"
+    }
+  },
+  "amputated_side": {
+    "Description": "Side of amputation for amputee participants.",
+    "Levels": {
+      "L": "left",
+      "R": "right",
+      "n/a": "not applicable"
+    }
+  }
+}

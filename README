@@ -1,0 +1,77 @@
+# Longitudinal fMRI of upper-limb amputation and able-bodied controls
+
+This dataset contains longitudinal functional MRI data from three case-study participants scanned 4-5 times both before and up to 5 years after planned upper-limb amputation, together with 16 right-handed able-bodied control participants scanned 4 times longitudinally across approximately 6 months.
+
+Participant identifiers beginning with `sub-aa` indicate amputee case-study participants. `sub-aa01` corresponds to the original participant code P1 (in the manuscript), `sub-aa02` corresponds to P2, and `sub-aa03` corresponds to P3. Participant identifiers beginning with `sub-co` indicate able-bodied control participants.
+
+## Sessions
+
+The session labels reflect longitudinal timepoints:
+
+- `ses-pre1`: first pre-amputation or baseline scan.
+- `ses-pre2`: second pre-amputation or baseline scan, acquired approximately 24 hours after `ses-pre1`.
+- `ses-post1`: approximately 3 months later; for amputee participants, approximately 3 months post-amputation.
+- `ses-post2`: approximately 6 months later; for amputee participants, approximately 6 months post-amputation.
+- `ses-post3`: additional long-term follow-up available only for `sub-aa01` and `sub-aa02`. For `sub-aa01`, this reflects approximately 1.5 years post-amputation. For `sub-aa02`, this reflects approximately 5 years post-amputation.
+
+## Data organization
+
+Each subject/session may include:
+
+- `anat/`: a single T1-weighted anatomical scan. Face voxels were removed using `fsl_deface` before sharing. Anatomical scan parameters are described in the associated Schone et al. Nature Neuroscience paper.
+- `func/`: task fMRI data, including four runs of the finger-mapping task and two runs of the body-localizer task where available.
+
+## Tasks
+
+### Finger-mapping task
+
+The primary task is a finger-mapping task designed to map activity patterns associated with individual digits and additional body-part control conditions. The task includes four runs per available session.
+
+Conditions are derived from the original onset files and include:
+
+- `LThumb`
+- `LIndex`
+- `LMid`
+- `LRing`
+- `LLit`
+- `RThumb`
+- `RIndex`
+- `RMid`
+- `RRing`
+- `RLit`
+- `Lips`
+- `Feet`
+
+For each run, BIDS `events.tsv` files include `onset`, `duration`, `trial_type`, and `amplitude`. The `amplitude` column preserves the third column from the original FSL FEAT onset files, where values are coded as 1.
+
+All participants used the same events timing files for this task. They simply differ by run, so you can take 1 participants events files and use that for everyone. 
+
+This task data was used for all figures in the mansucript, except for Figure 1C, described below. 
+
+The instructions for this task are described in the manuscript. The finger conditions were attemtped finger tapping, lips involved pursing the lips and feet involved curling the toes of both feet. 
+
+### Body-localizer task
+
+The body-localizer task was used to identify broad body-part representations. Each available session includes two body-localizer runs. Different participants received either the left-sided or right-sided body-localizer version, as documented in the event files. In the manuscript, only the ImagineLeftHand, ImagingeRightHand, LeftHand, RightHand data was reported in Figure 1C, showing the contrast between imagined phantom movements versus attempted phantom movements. 
+
+The instruction to participants involved attempting a grasp of the right or left hand versus imagining grasping the right or left hand. The arm movement was raising the hand off of the scan bed slightly. The lips movement was a lips purse and the foot movement was curling the toes of just the left or right foot. 
+
+Conditions include:
+
+- `LeftHand`
+- `RightHand`
+- `LeftArm` OR `RightArm`
+- `LeftFoot` OR `RightFoot`
+- `Lips`
+- `ImagineLeftHand` OR `ImagineRightHand`
+
+The body-localizer events are encoded in BIDS `events.tsv` files with `onset`, `duration`, `trial_type`, and `amplitude`.
+
+## Amputee-specific metadata
+
+Additional clinical and longitudinal metadata for the three amputee participants are provided in:
+
+- `amputee_participants.tsv`
+- `amputee_participants.json`
+
+These files include amputation side, cause and level of amputation, surgery type, phantom limb sensation and pain measures, prosthesis information, and the mapping between each post-amputation scan session and time since amputation. This information, while provided in the tsv file, is reported in detail in the manuscript within Extended Data Table 1. 
