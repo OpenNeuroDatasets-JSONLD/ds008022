@@ -8,7 +8,7 @@ This OpenNeuro release accompanies the study:
 
 The repository combines **four independent MRI datasets** that were analyzed together in the accompanying manuscript. Together these datasets comprise longitudinal and cross-sectional MRI data from individuals with upper-limb amputation together with several able-bodied comparison groups.
 
-The primary dataset consists of three individuals who underwent planned upper-limb amputation and were scanned repeatedly before and after surgery, together with a longitudinal able-bodied control group. Three additional datasets provide independent comparison cohorts of younger able-bodied participants and chronic upper-limb amputees.
+The primary dataset consists of three individuals who underwent planned upper-limb amputation and were scanned repeatedly before and after surgery, together with a longitudinal able-bodied control group. Three additional datasets provide independent comparison cohorts of able-bodied participants and chronic upper-limb amputees.
 
 All data are organized according to the Brain Imaging Data Structure (BIDS).
 
@@ -26,7 +26,7 @@ All data are organized according to the Brain Imaging Data Structure (BIDS).
 Total participants included:
 
 * **30 upper-limb amputees**
-* **56 able-bodied control participants**
+* **45 able-bodied control participants**
 
 ---
 
